@@ -78,9 +78,9 @@ TEST(PracticeTest, is_order_incorrect)
 	int b = 46;
 	int c = 47;
 	obj.sortDescending(a, b, c);
-    ASSERT_LT(c, a);
-	ASSERT_LT(b, a);
-	ASSERT_LT(c, b);
+    ASSERT_LE(c, a);
+	ASSERT_LE(b, a);
+	ASSERT_LE(c, b);
 
 }
 
@@ -91,8 +91,21 @@ TEST(PracticeTest, is_order_correct)
 	int b = 98;
 	int c = 96;
 	obj.sortDescending(a, b, c);
-    ASSERT_LT(c, a);
-	ASSERT_LT(b, a);
-	ASSERT_LT(c, b);
+    ASSERT_LE(c, a);
+	ASSERT_LE(b, a);
+	ASSERT_LE(c, b);
+
+}
+
+TEST(PracticeTest, is_order_same)
+{
+	Practice obj;
+	int a = 77;
+	int b = 77;
+	int c = 77;
+	obj.sortDescending(a, b, c);
+    ASSERT_LE(c, a);
+	ASSERT_LE(b, a);
+	ASSERT_LE(c, b);
 
 }
